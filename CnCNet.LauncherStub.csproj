@@ -5,13 +5,13 @@
     <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
     <Title>CnCNet Launcher</Title>
-    <Description>Launcher for CnCNet Client</Description>
+    <Description>地球危机 CnCNet 客户端启动器</Description>
     <Company>CnCNet</Company>
     <Product>CnCNet Client Launcher</Product>
     <Copyright>Copyright © CnCNet, Rampastring 2011-2023</Copyright>
     <Trademark></Trademark>
-    <AssemblyName>CnCNet.LauncherStub</AssemblyName>
-    <RootNamespace>CnCNet.LauncherStub</RootNamespace>
+    <AssemblyName>ECLauncher</AssemblyName>
+    <RootNamespace>ECLauncher</RootNamespace>
     <ComVisible>false</ComVisible>
     <CLSCompliant>false</CLSCompliant>
     <AnalysisLevel>latest-all</AnalysisLevel>
@@ -21,6 +21,8 @@
     <ApplicationIcon>mainclienticon.ico</ApplicationIcon>
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Version>2.0.6</Version>
+    <PackageId></PackageId>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="mainclienticon.ico" />
@@ -32,7 +34,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xaml"/>
+    <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

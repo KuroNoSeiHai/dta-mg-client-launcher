@@ -76,7 +76,7 @@ internal sealed class Program
         }
         catch (Exception ex)
         {
-            AdvancedMessageBoxHelper.ShowOkMessageBox(ex.ToString(), "Client Launcher Error", okText: "Exit");
+            AdvancedMessageBoxHelper.ShowOkMessageBox(ex.ToString(), "客户端启动器错误", okText: "退出");
             Environment.Exit(1);
         }
     }
@@ -141,13 +141,13 @@ internal sealed class Program
 
     private static int? ShowIncompatibleGPUMessage(string[] selections) => AdvancedMessageBoxHelper.ShowMessageBoxWithSelection(
             string.Format(
-                "The client has detected an incompatibility between your graphics card\nand both the DirectX11 and OpenGL versions of the CnCNet client.\n\n" +
-                "The XNA version of the client could still work on your system, but it needs\nMicrosoft XNA Framework 4.0 Refresh to be installed.\n\n" +
-                "You can download the installer from the following link:\n\n" +
+                "客户端检测到您的显卡不兼容\n DirectX11 和 OpenGL 版本 CnCNet 客户端。\n\n" +
+                " XNA 版本客户端仍然能在您的系统正常工作，但是需要先安装\nMicrosoft XNA Framework 4.0 Refresh。\n\n" +
+                "您可以从以下链接下载对应安装程序：\n\n" +
                 "{0}\n\n" +
-                "Alternatively, you can retry launching the DirectX11 version of the client.\n\n" +
-                "We apologize for the inconvenience.", XnaDownloadLink.ToString()),
-            "Graphics Card Incompatibility Detected",
+                "或者，你可以尝试重新启动 DirectX11 版本客户端。\n\n" +
+                "给您带来不便敬请谅解。", XnaDownloadLink.ToString()),
+            "检测到显卡不兼容",
             selections);
 
     private static void AutoRun()
@@ -166,7 +166,7 @@ internal sealed class Program
                     return;
                 }
 
-                int? result = ShowIncompatibleGPUMessage(new[] { "Open link", "Launch XNA version", "Launch DirectX11 version", "Exit" });
+                int? result = ShowIncompatibleGPUMessage(new[] { "打开链接", "启动 XNA 版本", "启动 DirectX11 版本", "退出" });
                 switch (result)
                 {
                     case 0:
@@ -203,7 +203,7 @@ internal sealed class Program
 
         if (!File.Exists(absolutePath))
         {
-            AdvancedMessageBoxHelper.ShowOkMessageBox($"Main client library ({relativePath}) not found!", "Client Launcher Error", okText: "Exit");
+            AdvancedMessageBoxHelper.ShowOkMessageBox($"客户端主程序库 ({relativePath}) 没有找到！", "客户端启动器错误", okText: "退出");
 
             Environment.Exit(3);
         }
@@ -270,10 +270,10 @@ internal sealed class Program
     {
         bool dialogResult = AdvancedMessageBoxHelper.ShowYesNoMessageBox(
             string.Format(
-            "The component {0} is missing.\n\n" +
-            "You can download the installer from the following link:\n\n{1}",
-            missingComponent, downloadLink.ToString()), "Component Missing",
-            yesText: "Open link", noText: "Exit");
+            "组件 {0} 缺失。\n\n" +
+            "您可以从以下链接下载对应安装程序：\n\n{1}",
+            missingComponent, downloadLink.ToString()), "组件缺失",
+            yesText: "打开链接", noText: "退出");
         if (dialogResult)
             OpenUri(downloadLink);
     }
